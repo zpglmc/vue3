@@ -2,6 +2,7 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    {{a}}
   </div>
 </template>
 
@@ -14,5 +15,21 @@ export default defineComponent({
   components: {
     HelloWorld,
   },
+  data(){
+    return{
+      a:4
+    }
+  },
+  setup(){
+    console.log(this,'setup')
+  },
+  beforeCreate(){
+    this.a = 10;
+    console.log(this,'beforeCreate')
+  },
+  created(){
+    this.a = 11;
+    console.log(this,'created')
+  }
 });
 </script>
